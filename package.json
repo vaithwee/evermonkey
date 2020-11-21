@@ -2,7 +2,7 @@
     "name": "evermonkey",
     "displayName": "evermonkey",
     "description": "Markdown support for Evernote.",
-    "version": "2.4.5",
+    "version": "2.4.6",
     "publisher": "michalyao",
     "engines": {
         "vscode": "^1.10.0"
@@ -41,7 +41,7 @@
             },
             {
                 "command": "extension.publishNote",
-                "title": "Ever publish: Publish current editting note to Evernote server."
+                "title": "印象笔记: 发布"
             },
             {
                 "command": "extension.openDevPage",
@@ -53,7 +53,7 @@
             },
             {
                 "command": "extension.newNote",
-                "title": "Ever new: Create a new empty note with markdown supported and metadata inited."
+                "title": "印象笔记: 新建"
             },
             {
                 "command": "extension.searchNote",
@@ -131,6 +131,15 @@
                 "key": "alt+e"
             }
         ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorFocus && resourceLangId == markdown",
+                    "command": "extension.publishNote",
+                    "group": "editor/context"
+                }
+            ]
+        },
         "configuration": {
             "title": "EverMonkey Configuration",
             "type": "object",
