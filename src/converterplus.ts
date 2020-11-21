@@ -16,7 +16,7 @@ import * as util from "util";
 // Make this configurable
 const MARKDOWN_THEME_PATH = path.join(__dirname, "../../themes");
 const HIGHLIGHT_THEME_PATH = path.join(__dirname, "../../node_modules/highlight.js/styles");
-const DEFAULT_HIGHLIGHT_THEME = "github";
+const DEFAULT_HIGHLIGHT_THEME = "monokai";
 const MAGIC_SPELL = "%EVERMONKEY%";
 
 const OVERRIDE_FONT_FAMILY = `
@@ -81,7 +81,7 @@ export default class Converter {
   }
 
   initStyles() {
-    let highlightTheme = config.highlightTheme || DEFAULT_HIGHLIGHT_THEME;
+    let highlightTheme = DEFAULT_HIGHLIGHT_THEME;
     // TODO: customize Mevernote rendering by input markdown theme.
     const markdownTheme = config.markdownTheme || "github.css";
     let formatTheme = highlightTheme.replace(/\s+/g, "-");
